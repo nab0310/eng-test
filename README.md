@@ -11,7 +11,8 @@ API resource created that will decrease the number of network calls being made.
 * API credentials and/or bearer tokens can be hard coded with values obtained out-of-band
 * You're familiar with [curl](https://curl.haxx.se) for testing Restful APIs
 * Your solution can ideally be launched with a single command, if not instructions MUST be provided so we can test your new API
-  * Example `mvn spring-boot:run`
+  * The only config that my app takes in is the `bearerToken`. Once you have generated it as in the [API Authorization section](#api-authentication) you should add it as a key in the application.properties file, which can be found in the `src/main/resources` folder.
+  * Run `mvn spring-boot:run`
 
 ### Overview
 
