@@ -7,7 +7,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.google.auto.value.AutoValue;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Nullable;
 
 /**
  * Represents a combined UserInfo type.
@@ -17,7 +16,6 @@ import javax.annotation.Nullable;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class UserInfo {
   @JsonProperty("_links")
-  @Nullable
   public abstract Map<String, Link> links();
 
   @JsonProperty("devices")

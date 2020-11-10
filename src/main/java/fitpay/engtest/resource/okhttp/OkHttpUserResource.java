@@ -29,20 +29,21 @@ import org.springframework.stereotype.Component;
 public class OkHttpUserResource implements UserResource {
   private static final Logger logger = LoggerFactory.getLogger(OkHttpUserResource.class);
 
-  private static final String API_URL = "https://api.qa.fitpay.ninja/users";
   private final OkHttpClient httpClient;
   private final ObjectMapper objectMapper;
+  private final String baseUrl;
 
   @Autowired
-  public OkHttpUserResource(ObjectMapper objectMapper, OkHttpClient httpClient) {
+  public OkHttpUserResource(ObjectMapper objectMapper, OkHttpClient httpClient, @Value("${fitPayApiUrl}") String baseUrl) {
     this.objectMapper = objectMapper;
     this.httpClient = httpClient;
+    this.baseUrl = baseUrl;
   }
 
   @Override
   public User getUser(String id) {
     Request request = new Request.Builder()
-        .url(API_URL + "/" + id)
+        .url(baseUrl + "/users/" + id)
         .build();
 
     try {
