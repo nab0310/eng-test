@@ -13,3 +13,4 @@
 ## Questions I have
 1. Can we figure out a better name than /compositeUsers?
 2. Should the underlying api have filters on it?
+3. What are the valid values for state of creditCards and devices? I would like to make my filters an enum.
